@@ -43,49 +43,50 @@ public class PartB
         int mid = (left + (right - left) / 2);
 
 		//base case
-
 		//return the only tree
 		if (right - left < 1)
 		{
 			return list[left];
 		}
 
+		//doing the side reccursions 
 		string leftSide = Reccursion(list, left, mid);
 		string rightSide = Reccursion(list, mid + 1, right);
 
-        //checking if they are the same
+        //checking if they are the same, if they are just retun it
         if (leftSide == rightSide)
         {
             return leftSide;
         }
 
         //then we check the opposite sides to see what one returns more.
-        int leftCount = 0; //this is the count of 'rightSide' tree on left side
-		int rightCount = 0; //this is the count of 'leftSide' tree on right side
+        int leftCountforRight = 0; //this is the count of 'rightSide' tree on left side
+		int rightCountforLeft = 0; //this is the count of 'leftSide' tree on right side
 
 		//checking the left side for the rightSide tree
 		for (int i = left; i <= mid; i++)
 		{
 			if (list[i] == rightSide)
 			{
-				leftCount++;
+				leftCountforRight++;
 			}
 		}
 
-		for (int j = mid + 1; j <= right; j++)
+		//checking the right side for the leftSide tree
+		for (int j = mid; j <= right; j++)
 		{
 			if (list[j] == leftSide)
 			{
-				rightCount++;
+				rightCountforLeft++;
 			}
 		}
 
 		//returning the tree that has the most
-		if (leftCount > rightCount && rightSide != noTree)
+		if (leftCountforRight > rightCountforLeft && rightSide != noTree)
 		{
 			return rightSide;
 		}
-		else if (rightCount > leftCount && leftSide != noTree)
+		else if (rightCountforLeft > leftCountforRight && leftSide != noTree)
 		{
 			return leftSide;
 		}

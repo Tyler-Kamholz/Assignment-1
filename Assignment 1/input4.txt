@@ -1,4 +1,4 @@
-maple
+oak
 oak
 oak
 oak
@@ -7,13 +7,13 @@ pine
 pine
 oak
 oak
-maple
-maple
-maple
-maple
 oak
 oak
 oak
+oak
+maple
+maple
+maple
 maple
 maple
 maple
