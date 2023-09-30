@@ -18,9 +18,12 @@ public class PartB
 			//read in the inputFile4.txt
 			listOfAnswers = File.ReadAllLines(filePath).ToList();
 
+			//this is the reccursion call
 			string answer = Reccursion(listOfAnswers, 0, listOfAnswers.Count - 1);
 
-			Console.WriteLine(answer);
+			//printing out the majority tree
+			Console.WriteLine();
+			Console.WriteLine("The tree that has the majority is: " + answer);
 
 
         }
