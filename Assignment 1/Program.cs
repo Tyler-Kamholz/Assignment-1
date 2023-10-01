@@ -12,10 +12,7 @@ class Program
         PartB partB = new PartB();
 
         //Option menu
-        Console.WriteLine("What part would you like to run? Please enter the letter. (Q to quit)");
-        Console.WriteLine("A");
-        Console.WriteLine("B");
-        Console.Write("Choice: ");
+        prints();
 
         char option;
 
@@ -47,7 +44,7 @@ class Program
             }
         }
 
-
+        //print statement
         void prints()
         {
             Console.WriteLine();
