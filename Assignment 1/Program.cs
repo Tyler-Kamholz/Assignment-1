@@ -12,7 +12,7 @@ class Program
         PartB partB = new PartB();
 
         //Option menu
-        Console.WriteLine("What part would you like to run? Please enter the letter.");
+        Console.WriteLine("What part would you like to run? Please enter the letter. (Q to quit)");
         Console.WriteLine("A");
         Console.WriteLine("B");
         Console.Write("Choice: ");
@@ -24,17 +24,39 @@ class Program
         option = char.ToLower(option);
 
         //this starts the option program
-        switch(option)
+        while (option != 'q')
         {
+            switch (option)
+            {
 
-            case 'a':
-                partA.Run();
-                break;
+                case 'a':
+                    Console.WriteLine();
+                    partA.Run();
+                    prints();
+                    char.TryParse(Console.ReadLine(), out option);
+                    option = char.ToLower(option);
+                    break;
 
-            case 'b':
-                partB.Run();
-                break;
+                case 'b':
+                    Console.WriteLine();
+                    partB.Run();
+                    prints();
+                    char.TryParse(Console.ReadLine(), out option);
+                    option = char.ToLower(option);
+                    break;
+            }
         }
+
+
+        void prints()
+        {
+            Console.WriteLine();
+            Console.WriteLine("What part would you like to run? Please enter the letter. (Q to quit)");
+            Console.WriteLine("A");
+            Console.WriteLine("B");
+            Console.Write("Choice: ");
+        }
+
 
     }
 
